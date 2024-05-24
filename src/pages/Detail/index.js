@@ -1,12 +1,12 @@
-import React from 'react'
 import Breadcrumbs from '../../components/Breadcrums'
+import IPODetail from '../../features/IPO/detail'
 
 const Detail = () => {
     return (
-        <div>Detail
-
+        <section className="space-y-8">
             <Breadcrumbs />
-        </div>
+            <IPODetail />
+        </section>
     )
 }
 

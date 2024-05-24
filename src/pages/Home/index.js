@@ -1,8 +1,11 @@
 import React from 'react'
+import IPOListing from '../../features/IPO/listing'
 
 const Home = () => {
     return (
-        <div>Home</div>
+        <div>
+            <IPOListing />
+        </div>
     )
 }
 

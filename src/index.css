@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
   margin: 0;
   font-family: 'Sora', sans-serif;
@@ -7,3 +11,19 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.text-black {
+  @apply text-primary text-lg font-semibold
+}
+.text-gray {
+  @apply text-secondary text-xs font-medium
+}
+
+.btn {
+  @apply text-base rounded-2xl p-3;
+}
+
+.btn--primary {
+  @apply bg-primary text-white;
+}
+
