@@ -24,15 +24,27 @@
         "asset": "https://cdn-images-1.medium.com/v2/resize:fit:280/1*9pGl3dhpub0IebV-pQ1QLQ@2x.jpeg",
         "ipoTimeline": [
             {
-                "stage": "Bidding Starts",
+                "stage": "bidding_starts",
                 "date": "2022-10-04T00:00:00Z"
             },
             {
-                "stage": "Bidding Ends",
+                "stage": "bidding_ends",
                 "date": "2022-10-07T00:00:00Z"
             },
             {
-                "stage": "Listing Date",
+                "stage": "allotment_finalization",
+                "date": "2022-10-09T00:00:00Z"
+            },
+            {
+                "stage": "refund_initiation",
+                "date": "2022-10-11T00:00:00Z"
+            },
+            {
+                "stage": "demat_transfer",
+                "date": "2022-10-13T00:00:00Z"
+            },
+            {
+                "stage": "listing_date",
                 "date": "2022-10-20T00:00:00Z"
             }
         ]
@@ -62,16 +74,12 @@
         "asset": "https://images.pexels.com/photos/5212324/pexels-photo-5212324.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
         "ipoTimeline": [
             {
-                "stage": "Bidding Starts",
+                "stage": "bidding_starts",
                 "date": "2022-10-04T00:00:00Z"
             },
             {
-                "stage": "Bidding Ends",
+                "stage": "bidding_ends",
                 "date": "2022-10-07T00:00:00Z"
-            },
-            {
-                "stage": "Listing Date",
-                "date": "2022-10-20T00:00:00Z"
             }
         ]
     }

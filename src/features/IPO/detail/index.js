@@ -1,26 +1,35 @@
-import { Fragment, createContext } from 'react'
-import { useSelector } from 'react-redux';
-
+import { Fragment, createContext, useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
 import IPOActions from './components/IPOActions'
-import IPOdata from '../../../data/IPO/dummy.json'
 import IPOAbout from './components/IPOAbout';
 import IPODetailInfo from './components/IPODetailInfo';
 import IPOTimeline from './components/IPOTimeline';
+import { useParams } from 'react-router-dom';
+import { clearSelectedIpo, fetchSingleIpo } from '../ipoSlice';
 
 export const DetailPageContext = createContext();
 
 const IPODetail = () => {
-    const { IpoList } = useSelector(state => state.ipoState);
-    console.log({ IpoList })
+    const { selectedIpo } = useSelector(state => state.ipoState);
+    const dispatch = useDispatch();
+    const { slug } = useParams();
+    const { companyInfo, company, asset, ipoTimeline } = selectedIpo || {}
+
+    useEffect(() => {
+        dispatch(fetchSingleIpo(slug))
+        return (() => {
+            dispatch(clearSelectedIpo())
+        })
+    }, [])
+
+    if (!selectedIpo) return
     return (
-        <DetailPageContext.Provider value={IPOdata[0]}>
             <Fragment>
-                <IPOActions />
+            <IPOActions companyInfo={companyInfo} company={company} asset={asset} />
                 <IPODetailInfo />
-                <IPOTimeline />
-                <IPOAbout />
-            </Fragment>
-        </DetailPageContext.Provider>
+            <IPOTimeline ipoTimeline={ipoTimeline} />
+            <IPOAbout companyInfo={companyInfo} />
+        </Fragment>
     )
 }
 

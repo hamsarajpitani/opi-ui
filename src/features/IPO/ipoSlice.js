@@ -5,15 +5,28 @@ const initialState = {
     Ipos: [],
     loading: true,
     error: null,
-    selectedIpoId: null,
+    selectedIpo: null,
 };
 
 export const fetchIpos = createAsyncThunk(
-    'IpoList/fetchIpos',
+    'IpoList/fetchIpoList',
     async (arg, { rejectWithValue }) => {
         try {
-            const data = await fetchIpoList();
+            const data = await fetchIpoList() // Replace with your actual API call
             return data;
+        } catch (error) {
+            return rejectWithValue(error.message);
+        }
+    }
+);
+
+export const fetchSingleIpo = createAsyncThunk(
+    'IpoList/fetchSingleIpo',
+    async (slug, { rejectWithValue }) => {
+        try {
+            const data = await fetchIpoList();
+            const IPODetail = data.find(item => item.slug === slug);
+            return IPODetail
         } catch (error) {
             return rejectWithValue(error.message);
         }
@@ -24,8 +37,8 @@ const IpoListSlice = createSlice({
     name: 'IpoList',
     initialState,
     reducers: {
-        selectIpo(state, action) {
-            state.selectedIpoId = action.payload;
+        clearSelectedIpo(state) {
+            state.selectedIpo = null;
         },
     },
     extraReducers: (builder) => {
@@ -36,14 +49,25 @@ const IpoListSlice = createSlice({
             })
             .addCase(fetchIpos.fulfilled, (state, action) => {
                 state.loading = false;
-                state.IpoList = action.payload;
+                state.Ipos = action.payload;
             })
             .addCase(fetchIpos.rejected, (state, action) => {
                 state.loading = false;
                 state.error = action.payload || 'An error occurred fetching Ipos';
+            })
+            .addCase(fetchSingleIpo.pending, (state) => {
+                state.loading = true;
+            })
+            .addCase(fetchSingleIpo.fulfilled, (state, action) => {
+                state.selectedIpo = action.payload;
+            })
+            .addCase(fetchSingleIpo.rejected, (state, action) => {
+                state.loading = false;
+                state.error = action.payload || 'An error occurred fetching Ipos';
+
             });
     },
 });
 
-export const { selectIpo } = IpoListSlice.actions;
+export const { clearSelectedIpo } = IpoListSlice.actions;
 export default IpoListSlice.reducer;

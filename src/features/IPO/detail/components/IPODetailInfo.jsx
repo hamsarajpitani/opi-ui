@@ -5,7 +5,7 @@ const IPODetailInfo = () => {
   return (
     <Fragment>
       <IPOContainer title="IPO details">
-        <IPOContainer>as</IPOContainer>
+        <IPOContainer showBorderOnMobile>as</IPOContainer>
       </IPOContainer>
     </Fragment>
   );

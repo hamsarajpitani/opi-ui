@@ -1,12 +1,8 @@
-import React, { useContext, useRef } from "react";
+import React, { useRef } from "react";
 import { BsFileEarmarkArrowDownFill } from "react-icons/bs";
-
-import { DetailPageContext } from "..";
 import GoBack from "components/GoBack";
 
-const IPOActions = () => {
-  const { company, companyInfo, asset } = useContext(DetailPageContext);
-
+const IPOActions = ({ companyInfo, company, asset }) => {
   const pageRef = useRef(null);
 
   const downloadPage = () => {

@@ -4,7 +4,7 @@ export const fetchIpoList = () => {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             resolve(IpoData);
-        }, 1000);
+        }, 200);
     });
 };
 

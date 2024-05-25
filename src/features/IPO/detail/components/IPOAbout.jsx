@@ -3,9 +3,7 @@ import { DetailPageContext } from "..";
 import DetailContainer from "../layout/IPOContainer";
 import ReadMore from "../../../../components/Readmore";
 
-const IPOAbout = () => {
-  const { companyInfo } = useContext(DetailPageContext);
-
+const IPOAbout = ({ companyInfo }) => {
   return (
     <DetailContainer title="About the company">
       {/* USING ONLY HERE FOR MAIN PRODUCT PROPER MARKDOWN EDITOR */}
