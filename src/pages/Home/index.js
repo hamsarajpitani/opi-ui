@@ -1,7 +1,17 @@
-import React from 'react'
+
+import { fetchIpos } from 'features/IPO/ipoSlice';
 import IPOListing from '../../features/IPO/listing'
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
 
 const Home = () => {
+    const dipatch = useDispatch();
+
+    useEffect(() => {
+        dipatch(fetchIpos())
+    }, [])
+
+
     return (
         <div>
             <IPOListing />

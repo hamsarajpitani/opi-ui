@@ -1,12 +1,11 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
-import useIsMobile from '../../hooks/useIsMobile';
+import useIsMobile from '../../utils/hooks/useIsMobile';
 
 const ReadMore = ({ children }) => {
     const [showReadMore, setShowReadMore] = useState(false);
     const [isExpanded, setIsExpanded] = useState(false);
     const contentRef = useRef(null);
     const isMobile = useIsMobile();
-    console.log({ isMobile })
 
     const handleClick = useCallback(() => {
         setIsExpanded((prevState) => !prevState);

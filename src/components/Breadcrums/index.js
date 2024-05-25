@@ -1,14 +1,17 @@
-import React from 'react';
-import { Link, useLocation, useMatches } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { MdKeyboardArrowRight } from 'react-icons/md';
 
-const BreadcrumLink = ({ route }) => {
+const BreadcrumLink = ({ route, isLast }) => {
+    let decodedSlug = decodeURIComponent(route);
+    let formattedText = decodedSlug.replace(/-/g, ' ');
     return (
-        <span key={route} className="flex items-center">
+        <span key={route} className="flex items-center capitalize">
             <MdKeyboardArrowRight className="mx-1" size={21} />
-            <Link to={route}>
-                {decodeURIComponent(route)}
-            </Link>
+            {isLast ? (
+                <span className='cursor-default'>{formattedText}</span>
+            ) : (
+                <Link to={route}>{formattedText}</Link>
+            )}
         </span>
     )
 }
@@ -22,8 +25,9 @@ const Breadcrumbs = () => {
                 Home
             </Link>
             {routesList?.map((route, index) => {
+                const isLast = index === routesList.length - 1;
                 return (
-                    <BreadcrumLink route={route} />
+                    <BreadcrumLink route={route} isLast={isLast} />
                 );
             })}
         </div>

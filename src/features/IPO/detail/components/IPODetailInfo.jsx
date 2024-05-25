@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import IPOContainer from "../shared/IPOContainer";
+import IPOContainer from "../layout/IPOContainer";
 
 const IPODetailInfo = () => {
   return (

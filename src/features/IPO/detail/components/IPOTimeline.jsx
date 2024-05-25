@@ -1,5 +1,5 @@
 import React from "react";
-import IPOContainer from "../shared/IPOContainer";
+import IPOContainer from "../layout/IPOContainer";
 
 const IPOTimeline = () => {
   return (

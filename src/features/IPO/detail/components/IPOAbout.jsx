@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { DetailPageContext } from "..";
-import DetailContainer from "../shared/IPOContainer";
+import DetailContainer from "../layout/IPOContainer";
 import ReadMore from "../../../../components/Readmore";
 
 const IPOAbout = () => {
@@ -8,7 +8,7 @@ const IPOAbout = () => {
 
   return (
     <DetailContainer title="About the company">
-      {/* USE ONLY HERE FOR MAIN PRODUCT PROPER MARKDOWN EDITOR */}
+      {/* USING ONLY HERE FOR MAIN PRODUCT PROPER MARKDOWN EDITOR */}
       <ReadMore>
         <div
           className="text-secondary"

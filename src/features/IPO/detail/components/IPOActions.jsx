@@ -1,11 +1,8 @@
 import React, { useContext, useRef } from "react";
-import { MdArrowBackIos } from "react-icons/md";
-import {
-  BsFileEarmarkArrowDown,
-  BsFileEarmarkArrowDownFill,
-} from "react-icons/bs";
+import { BsFileEarmarkArrowDownFill } from "react-icons/bs";
 
 import { DetailPageContext } from "..";
+import GoBack from "components/GoBack";
 
 const IPOActions = () => {
   const { company, companyInfo, asset } = useContext(DetailPageContext);
@@ -23,9 +20,7 @@ const IPOActions = () => {
     >
       {/* COMPANY SECTION */}
       <section className="flex items-center gap-4">
-        <div className="hidden h-11 w-11 place-content-center rounded-lg border p-2 shadow-md md:grid">
-          <MdArrowBackIos />
-        </div>
+        <GoBack className="hidden md:inline-flex" />
         <div class="flex items-center text-sm">
           <div class="relative mr-2 h-12 w-12 rounded-full md:block">
             <img

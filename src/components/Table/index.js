@@ -1,11 +1,42 @@
-import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
 
-const Table = ({ columns, data }) => {
+const TableHeader = ({ columns }) => (
+    <thead>
+        <tr className="select-none text-left text-gray-400 bg-gray-100 capitalize border-gray-600">
+            {columns.map((column) => (
+                <th key={column.title} className="px-4 py-4 font-medium">
+                    {column.title}
+                </th>
+            ))}
+        </tr>
+    </thead>
+);
+
+const TableRow = ({ row, columns, handleRowClick }) => (
+    <tr
+        onClick={() => handleRowClick(row.slug)}
+        key={row.id}
+        className="hover:bg-secondary/20 cursor-pointer"
+    >
+        {columns.map((column) => {
+            const value = column.accessor ? row[column.accessor] : row;
+            return (
+                <TableColumn key={uuidv4()} value={value} render={column.render} />
+            );
+        })}
+    </tr>
+);
+
+const TableColumn = ({ value, render }) => (
+    <td className="px-4 py-3 border-b">{render ? render(value) : value}</td>
+);
+
+
+const DataTable = ({ columns, data }) => {
     const navigate = useNavigate();
     const handleRowClick = (slug) => {
-        navigate(slug)
+        navigate(slug);
     };
 
     return (
@@ -13,27 +44,15 @@ const Table = ({ columns, data }) => {
             <div className="w-full mb-8 overflow-hidden rounded-lg shadow-lg">
                 <div className="w-full overflow-x-auto">
                     <table className="w-full">
-                        <thead>
-                            <tr className="select-none text-left text-gray-400 bg-gray-100 capitalize border-gray-600">
-                                {columns.map((column) => (
-                                    <th key={column.title} className="px-4 py-4 font-medium">
-                                        {column.title}
-                                    </th>
-                                ))}
-                            </tr>
-                        </thead>
+                        <TableHeader columns={columns} />
                         <tbody className="bg-white">
                             {data.map((row) => (
-                                <tr onClick={() => handleRowClick(row.slug)} key={row.id || Math.random()} className='hover:bg-secondary/20 cursor-pointer'>
-                                    {columns.map((column) => {
-                                        const value = column.accessor ? row[column.accessor] : row;
-                                        return (
-                                            <td key={uuidv4()} className="px-4 py-3 border-b">
-                                                {column.render ? column.render(value) : value}
-                                            </td>
-                                        );
-                                    })}
-                                </tr>
+                                <TableRow
+                                    key={row.id}
+                                    row={row}
+                                    columns={columns}
+                                    handleRowClick={handleRowClick}
+                                />
                             ))}
                         </tbody>
                     </table>
@@ -43,4 +62,4 @@ const Table = ({ columns, data }) => {
     );
 };
 
-export default Table;
+export default DataTable;
