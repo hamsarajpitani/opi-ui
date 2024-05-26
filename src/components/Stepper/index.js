@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { FaCheck } from "react-icons/fa6";
 import useIsMobile from "../../utils/hooks/useIsMobile";
+import TextContainer from "../../features/IPO/components/TextContainer";
 
 const Step = ({ data, label, index, currentStep, onClick }) => {
     const isActive = index <= currentStep;
@@ -13,12 +14,7 @@ const Step = ({ data, label, index, currentStep, onClick }) => {
             <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform">
                 {isActive && <FaCheck className="p-0.5" />}
             </span>
-            <h5 className="absolute left-full ml-4 whitespace-nowrap text-center text-base font-semibold text-primary md:left-auto md:top-full md:ml-0 md:mt-4 md:whitespace-pre-wrap">
-                {label}
-                <span className="text-gray block whitespace-nowrap md:inline-block">
-                    {data}
-                </span>
-            </h5>
+            <TextContainer className="absolute text-left left-full ml-4 md:text-center text-base font-semibold text-primary md:left-auto md:top-full md:ml-0 md:mt-4 whitespace-nowrap md:whitespace-pre-wrap [&>span]:whitespace-nowrap " title={label} desc={data} />
         </div>
     );
 };

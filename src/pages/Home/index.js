@@ -11,7 +11,6 @@ const Home = () => {
         dipatch(fetchIpos())
     }, [])
 
-
     return (
         <div>
             <IPOListing />
