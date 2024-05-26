@@ -1,5 +1,4 @@
-import React, { useContext } from "react";
-import { DetailPageContext } from "..";
+import React from "react";
 import DetailContainer from "../layout/IPOContainer";
 import ReadMore from "../../../../components/Readmore";
 

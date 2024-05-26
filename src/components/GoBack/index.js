@@ -1,7 +1,7 @@
 
 import { MdArrowBackIos } from 'react-icons/md'
 import { useNavigate } from 'react-router-dom'
-import { tw } from 'utils/helpers/tw'
+import { tw } from '../../utils/helpers/tw';
 
 const GoBack = ({ from = '/', className }) => {
     const navigate = useNavigate();

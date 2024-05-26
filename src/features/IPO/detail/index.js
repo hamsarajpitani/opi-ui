@@ -26,7 +26,7 @@ const IPODetail = () => {
     return (
             <Fragment>
             <IPOActions companyInfo={companyInfo} company={company} asset={asset} />
-                <IPODetailInfo />
+            <IPODetailInfo selectedIpo={selectedIpo} />
             <IPOTimeline ipoTimeline={ipoTimeline} />
             <IPOAbout companyInfo={companyInfo} />
         </Fragment>

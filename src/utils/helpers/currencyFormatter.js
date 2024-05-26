@@ -37,11 +37,9 @@ export function formatToIndianCurrencyWithLabel(number) {
             formattedString += `${num} Rs`;
             break;
     }
-
     return formattedString;
 }
 
 export function formatToIndianCurrency(number) {
     return number.toLocaleString('en-IN', { style: 'currency', currency: 'INR', minimumFractionDigits: 0 });
-
 }

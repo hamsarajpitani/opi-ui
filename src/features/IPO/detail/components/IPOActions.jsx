@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { BsFileEarmarkArrowDownFill } from "react-icons/bs";
-import GoBack from "components/GoBack";
+import GoBack from "../../../../components/GoBack";
 import TextContainer from "../../components/TextContainer";
 
 const IPOActions = ({ companyInfo, company, asset }) => {

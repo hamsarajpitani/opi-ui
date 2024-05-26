@@ -8,10 +8,10 @@
         },
         "issueSize": {
             "min": 360000000,
-            "max": 3700
+            "max": 370000000
         },
-        "minPrice": 50,
-        "maxPrice": 60,
+        "minPrice": 100,
+        "maxPrice": 160,
         "minInvestment": 50000,
         "listedOn": "2022-10-20T00:00:00Z",
         "createdAt": "2024-05-24T00:00:00Z",
