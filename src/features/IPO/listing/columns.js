@@ -1,6 +1,6 @@
 import dayjs from 'dayjs';
-import { formatToIndianCurrency, formatToIndianCurrencyWithLabel } from '../../../../utils/helpers/currencyFormatter'
-import TextContainer from '../../components/TextContainer'
+import { formatToIndianCurrency, formatToIndianCurrencyWithLabel } from 'utils/helpers/currencyFormatter';
+import TextContainer from '../components/TextContainer';
 dayjs.extend(require('dayjs/plugin/advancedFormat'));
 
 export const columns = [
@@ -18,12 +18,12 @@ export const columns = [
                 issueDateText = `${dayjs(issueStartDate).format(isSameMonth ? 'Do' : 'Do MMM')} - ${dayjs(issueEndDate).format('Do MMM YYYY')}`
             }
             return <div class='flex items-center'>
-                    <img
+                <img
                     class='object-cover w-8 h-8 mr-2 rounded-full'
-                        src={row.asset}
+                    src={row.asset}
                     alt={company}
-                        loading='lazy'
-                    />
+                    loading='lazy'
+                />
                 <TextContainer title={company} desc={issueDateText} />
             </div>
         },

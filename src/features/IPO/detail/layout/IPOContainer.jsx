@@ -1,4 +1,4 @@
-import { tw } from "../../../../utils/helpers/tw";
+import { tw } from "utils/helpers/tw";
 
 const IPOContainer = ({ title, showBorderOnMobile, children }) => {
   return (

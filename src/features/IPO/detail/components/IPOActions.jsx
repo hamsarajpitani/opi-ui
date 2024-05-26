@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { BsFileEarmarkArrowDownFill } from "react-icons/bs";
-import GoBack from "../../../../components/GoBack";
-import TextContainer from "../../components/TextContainer";
+import GoBack from "components/GoBack";
+import TextContainer from "features/IPO/components/TextContainer";
 
 const IPOActions = ({ companyInfo, company, asset }) => {
   const pageRef = useRef(null);
@@ -26,10 +26,6 @@ const IPOActions = ({ companyInfo, company, asset }) => {
               alt=""
               loading="lazy"
             />
-            <div
-              class="absolute inset-0 rounded-full shadow-inner"
-              aria-hidden="true"
-            ></div>
           </div>
           <TextContainer title={company} desc={companyInfo.title} />
         </div>

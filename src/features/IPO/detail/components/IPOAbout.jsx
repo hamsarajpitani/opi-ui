@@ -1,10 +1,10 @@
 import React from "react";
-import DetailContainer from "../layout/IPOContainer";
-import ReadMore from "../../../../components/Readmore";
+import ReadMore from "components/Readmore";
+import IPOContainer from "../layout/IPOContainer";
 
 const IPOAbout = ({ companyInfo }) => {
   return (
-    <DetailContainer title="About the company">
+    <IPOContainer title="About the company">
       {/* USING ONLY HERE FOR MAIN PRODUCT PROPER MARKDOWN EDITOR */}
       <ReadMore>
         <div
@@ -13,7 +13,7 @@ const IPOAbout = ({ companyInfo }) => {
           dangerouslySetInnerHTML={{ __html: companyInfo.summary }}
         />
       </ReadMore>
-    </DetailContainer>
+    </IPOContainer>
   );
 };
 

@@ -12,7 +12,7 @@ export const fetchIpos = createAsyncThunk(
     'IpoList/fetchIpoList',
     async (arg, { rejectWithValue }) => {
         try {
-            const data = await fetchIpoList() // Replace with your actual API call
+            const data = await fetchIpoList()
             return data;
         } catch (error) {
             return rejectWithValue(error.message);
@@ -59,6 +59,7 @@ const IpoListSlice = createSlice({
                 state.loading = true;
             })
             .addCase(fetchSingleIpo.fulfilled, (state, action) => {
+                state.loading = false;
                 state.selectedIpo = action.payload;
             })
             .addCase(fetchSingleIpo.rejected, (state, action) => {

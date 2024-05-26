@@ -20,7 +20,7 @@ const IPODetail = () => {
         return (() => {
             dispatch(clearSelectedIpo())
         })
-    }, [])
+    }, [dispatch, slug])
 
     if (!selectedIpo) return
     return (

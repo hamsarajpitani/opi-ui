@@ -1,5 +1,5 @@
-import Breadcrumbs from '../../components/Breadcrums'
-import IPODetail from '../../features/IPO/detail'
+import Breadcrumbs from 'components/Breadcrums'
+import IPODetail from 'features/IPO/detail'
 
 const Detail = () => {
     return (

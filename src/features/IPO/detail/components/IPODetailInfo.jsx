@@ -1,13 +1,15 @@
 import React, { Fragment, useMemo } from "react";
-import IPOContainer from "../layout/IPOContainer";
-import TextContainer from "../../components/TextContainer";
+
 import {
   formatToIndianCurrency,
   formatToIndianCurrencyWithLabel,
-} from "../../../../utils/helpers/currencyFormatter";
+} from "utils/helpers/currencyFormatter";
 import dayjs from "dayjs";
-import { calculatePercentage } from "../../../../utils/helpers/calculatorPercentage";
-import useIsMobile from "../../../../utils/hooks/useIsMobile";
+import { calculatePercentage } from "utils/helpers/calculatorPercentage";
+import useIsMobile from "utils/hooks/useIsMobile";
+
+import IPOContainer from "../layout/IPOContainer";
+import TextContainer from "../../components/TextContainer";
 
 const formatCurrencyRange = (min, max) =>
   `${formatToIndianCurrency(min)} - ${formatToIndianCurrency(max)}`;
@@ -70,6 +72,7 @@ const IPODetailInfo = ({ selectedIpo }) => {
       },
       ...(isMobile ? [] : desktopDetails),
     ],
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [isMobile],
   );
 

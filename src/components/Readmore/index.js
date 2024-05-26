@@ -16,6 +16,7 @@ const ReadMore = ({ children }) => {
         if (contentElement) {
             setShowReadMore(contentElement.scrollHeight > contentElement.clientHeight);
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [contentRef.current]);
 
     const readMoreStyle = (isExpanded || !isMobile)

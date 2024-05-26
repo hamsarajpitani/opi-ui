@@ -1,7 +1,8 @@
 import React from "react";
-import IPOContainer from "../layout/IPOContainer";
-import Stepper from "../../../../components/Stepper";
 import dayjs from "dayjs";
+import Stepper from "components/Stepper";
+
+import IPOContainer from "../layout/IPOContainer";
 
 const stageLabels = {
   bidding_starts: "Bidding Starts",
