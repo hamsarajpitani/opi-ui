@@ -2,13 +2,13 @@ import React, { useRef } from "react";
 import { BsFileEarmarkArrowDownFill } from "react-icons/bs";
 import GoBack from "components/GoBack";
 import TextContainer from "features/IPO/components/TextContainer";
+import usePdfDownload from "utils/hooks/usePdfDownload";
 
 const IPOActions = ({ companyInfo, company, asset }) => {
   const pageRef = useRef(null);
-
-  const downloadPage = () => {
-    window.print();
-  };
+  const { downloadPdf } = usePdfDownload(
+    `${process.env.PUBLIC_URL}/dummy.pdf"`,
+  );
 
   return (
     <div
@@ -35,7 +35,7 @@ const IPOActions = ({ companyInfo, company, asset }) => {
 
       <section className="hidden items-center justify-center gap-5 md:flex">
         <BsFileEarmarkArrowDownFill
-          onClick={downloadPage}
+          onClick={downloadPdf}
           size={40}
           className="cursor-pointer text-primary"
         />
