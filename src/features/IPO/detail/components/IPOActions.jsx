@@ -6,9 +6,7 @@ import usePdfDownload from "utils/hooks/usePdfDownload";
 
 const IPOActions = ({ companyInfo, company, asset }) => {
   const pageRef = useRef(null);
-  const { downloadPdf } = usePdfDownload(
-    `${process.env.PUBLIC_URL}/dummy.pdf"`,
-  );
+  const { downloadPdf } = usePdfDownload(`${process.env.PUBLIC_URL}/dummy.pdf`);
 
   return (
     <div

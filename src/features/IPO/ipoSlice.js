@@ -22,10 +22,15 @@ export const fetchIpos = createAsyncThunk(
 
 export const fetchSingleIpo = createAsyncThunk(
     'IpoList/fetchSingleIpo',
-    async (slug, { rejectWithValue }) => {
+    async (slug, { rejectWithValue, dispatch, getState }) => {
         try {
-            const data = await fetchIpoList();
-            const IPODetail = data.find(item => item.slug === slug);
+            const { Ipos } = getState().ipoState;
+            if (Ipos.length) {
+                return Ipos.find(item => item.slug === slug);
+            }
+            await dispatch(fetchIpos());
+            const { Ipos: updatedIpos } = getState().ipoState;
+            const IPODetail = updatedIpos.find(item => item.slug === slug);
             return IPODetail
         } catch (error) {
             return rejectWithValue(error.message);

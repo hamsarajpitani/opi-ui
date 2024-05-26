@@ -10,21 +10,20 @@ const usePdfDownload = (pdfUrl) => {
       setError(null);
 
       const response = await fetch(pdfUrl);
-
       if (!response.ok) {
         throw new Error(`Failed to fetch PDF file: ${response.statusText}`);
       }
 
       const blob = await response.blob();
-      const url = window.URL.createObjectURL(blob);
+      const filename = pdfUrl.split("/").pop();
 
-      const a = document.createElement("a");
-      a.href = url;
-      a.download = pdfUrl.split("/").pop();
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-      window.URL.revokeObjectURL(url);
+      const link = document.createElement("a");
+      link.href = URL.createObjectURL(blob);
+      link.download = filename;
+      link.click();
+
+      link.remove();
+      URL.revokeObjectURL(link.href);
     } catch (err) {
       setError(err.message);
     } finally {
