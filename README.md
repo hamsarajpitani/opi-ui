@@ -1,71 +1,50 @@
-# Getting Started with Create React App
+# opi-ui: Project Structure
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This document explains the folder structure of the opi-ui project.
 
-## Available Scripts
+## src
 
-In the project directory, you can run:
+The `src` folder contains the source code for the React application.
 
-### `npm start`
+- **components** (folder): Contains reusable UI components for your application.
+  Some Examples  include `Readmore`, `Stepper`, and `Table`.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **data** (folder): Stores data used by your application.
+  In this example, there's a `dummy.json` file containing sample data for a IPO.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **features** (folder): Feature-specific folders group related components and logic.
+  The example shows an `IPO` folder
+ - **components** (folder): Likely contains components specific to the feature.
+    In this case, there's a `TextContainer.jsx` file. Which is **Shared"" accross features sub folder
 
-### `npm test`
+  - **detail** (folder): Potentially a section for detail page.
+    - **components** (folder):  contain components used for detailed views.
+    - **layout** (folder):  folder containing an `IPOContainer.jsx` an UI based reusebale component file.
+  - **index.js** (file):  the entry point of component;
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+    -**listing** (folder): Could be a section for listing items in your application.
+    Contains `api.js` and `ipoSlice.js` files, possibly for handling data fetching and logic related to IPO listings.
 
-### `npm run build`
+    -**api** (folder): contains API's related to IPO
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    -**ipoSlice** (folder): contain IPO actions & reducers further broken reducer / action folder in large application
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **layout** (folder):  contains Global layout structure components for application.
+  The example shows an `index.js` file can also contain Header Footer etc.
 
-### `npm run eject`
+- **pages** (folder): contain entry point for specific pages in application.
+   example a `Detail` and `Home` folder separate pages in  app.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- **routers** (folder): contains routing logic for application.
+   example a `Router.js` file.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- **store** (folder):  contain your application's global store.
+   example a `store.js` file.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- **utils** (folder):  contains utility functions used throughout the application.
+   example a `helpers` and `hooks` folders.
+  - `hooks` might contain React hooks used in your application.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- **index.css ** (folder):  likely contains global CSS styles for your application, including Tailwind CSS directives
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# opi-ui
