@@ -1,7 +1,6 @@
-export function formatToIndianCurrencyWithLabel(number) {
-    number = number.toFixed(2);
-
-    let num = parseInt(number, 10);
+export function formatToIndianCurrencyWithLabel({ number, shortLabel, showLabel = true }) {
+    number = parseFloat(number).toFixed(2);
+    let num = parseFloat(number);
 
     let crore = 0, lakh = 0, thousand = 0;
 
@@ -25,7 +24,7 @@ export function formatToIndianCurrencyWithLabel(number) {
     let formattedString = '₹';
     switch (true) {
         case (crore > 0):
-            formattedString += `${crore * 100} Cr`;
+            formattedString += `${crore * 100} ${shortLabel ? 'Cr' : 'Crores'}`;
             break;
         case (lakh > 0):
             formattedString += `${lakh} Lakh`;
@@ -37,9 +36,9 @@ export function formatToIndianCurrencyWithLabel(number) {
             formattedString += `${num} Rs`;
             break;
     }
-    return formattedString;
+    return showLabel ? formattedString : formattedString?.split(' ')?.[0];
 }
 
-export function formatToIndianCurrency(number) {
-    return number.toLocaleString('en-IN', { style: 'currency', currency: 'INR', minimumFractionDigits: 0 });
+export function formatToIndianCurrency({ number, showSymbol = true }) {
+    return number.toLocaleString('en-IN', { style: showSymbol ? 'currency' : 'decimal', currency: 'INR', minimumFractionDigits: 0 });
 }

@@ -21,7 +21,7 @@
         "issueEndDate": "2022-10-07T00:00:00Z",
         "lotSize": 100,
         "lotSizeUnit": 1,
-        "asset": "https://cdn-images-1.medium.com/v2/resize:fit:280/1*9pGl3dhpub0IebV-pQ1QLQ@2x.jpeg",
+        "asset": "https://airhex.com/images/airline-logos/tail/go-first.png",
         "ipoTimeline": [
             {
                 "stage": "bidding_starts",
@@ -57,21 +57,21 @@
             "title": "OYO PVT LTD"
         },
         "issueSize": {
-            "min": 100,
-            "max": 1500
+            "min": 360000000,
+            "max": 390000000
         },
         "minPrice": 50,
         "maxPrice": 60,
         "minInvestment": 50000,
         "listedOn": "2022-10-20T00:00:00Z",
         "createdAt": "2024-05-24T00:00:00Z",
-        "listingPrice": "",
-        "listingGain": 0.0,
+        "listingPrice": 55,
+        "listingGain": 5,
         "issueStartDate": "2022-10-09T00:00:00Z",
         "issueEndDate": "2022-10-12T00:00:00Z",
         "lotSize": 10,
         "lotSizeUnit": 5,
-        "asset": "https://images.pexels.com/photos/5212324/pexels-photo-5212324.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
+        "asset": "https://cdn-images-1.medium.com/v2/resize:fit:280/1*9pGl3dhpub0IebV-pQ1QLQ@2x.jpeg",
         "ipoTimeline": [
             {
                 "stage": "bidding_starts",

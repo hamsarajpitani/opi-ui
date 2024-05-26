@@ -32,17 +32,17 @@ export const columns = [
         title: 'Issue size',
         accessor: 'issueSize',
         render: ({ min }) =>
-            <TextContainer title={formatToIndianCurrencyWithLabel(min)} />
+            <TextContainer title={formatToIndianCurrencyWithLabel({ number: min })} />
     },
     {
         title: 'Price range',
         render: ({ minPrice, maxPrice }) => (
-            <TextContainer title={`${formatToIndianCurrency(minPrice)} - ${formatToIndianCurrency(maxPrice)}`} />
+            <TextContainer title={`${formatToIndianCurrency({ number: minPrice })} - ${formatToIndianCurrency({ number: maxPrice })}`} />
         ),
     },
     {
         title: 'Min invest/qty', render: ({ minInvestment, lotSize, lotSizeUnit }) => (
-            <TextContainer className="text-center" title={formatToIndianCurrency(minInvestment)} desc={`${lotSize} Shared /${lotSizeUnit} Lots}`} />
+            <TextContainer className="text-center" title={formatToIndianCurrency({ number: minInvestment })} desc={`${lotSize} Shared /${lotSizeUnit} Lots}`} />
         ),
     },
 ]
