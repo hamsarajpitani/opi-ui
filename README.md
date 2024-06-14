@@ -14,8 +14,8 @@ The `src` folder contains the source code for the React application.
 
 - **features** (folder): Feature-specific folders group related components and logic.
   The example shows an `IPO` folder
- - **components** (folder): Likely contains components specific to the feature.
-    In this case, there's a `TextContainer.jsx` file. Which is **Shared"" accross features sub folder
+ - **components** (folder): contains components specific to the feature.
+    In this case, there's a `TextContainer.jsx` file. Which is **Shared** accross features sub folder
 
   - **detail** (folder): Potentially a section for detail page.
     - **components** (folder):  contain components used for detailed views.
@@ -39,12 +39,12 @@ The `src` folder contains the source code for the React application.
 - **routers** (folder): contains routing logic for application.
    example a `Router.js` file.
 
-- **store** (folder):  contain your application's global store.
+- **store** (folder):  contain application's global store.
    example a `store.js` file.
 
 - **utils** (folder):  contains utility functions used throughout the application.
    example a `helpers` and `hooks` folders.
-  - `hooks` might contain React hooks used in your application.
+  - `hooks` contain React hooks used in your application.
 
-- **index.css ** (folder):  likely contains global CSS styles for your application, including Tailwind CSS directives
+- **index.css ** (folder): contains global CSS styles for your application, including Tailwind CSS directives
 
